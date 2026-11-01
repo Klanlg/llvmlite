@@ -43,13 +43,6 @@ jobs:
           python-version: ${{ env.BUILD_PYTHON_VERSION }}
           allow-prereleases: true
 
-      - name: Download llvmdev Artifact
-        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
-        with:
-          name: llvmdev_for_wheel_win-64
-          path: llvmdev_conda_packages
-          repository: ${{ github.repository }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install build dependencies
         run: |
